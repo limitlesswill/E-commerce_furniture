@@ -1,2 +1,2 @@
-# jsproject
-iti js crash course project
+## Javascript Project
+ITI Javascript [ Final project ]
