@@ -1,0 +1,312 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+:root{
+    --white-color:#fff;
+    --second-color:#e2e434;
+    --header-color:#1E293B;
+    --P-color:#334155;
+
+
+}
+/*Start Container */
+/* .container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width:768px) {
+    .container{width: 750px;}
+}
+@media (min-width:992px) {
+    .container{width: 970px;}
+}
+@media (min-width:1200px) {
+    .container{width: 1170px;}
+} */
+/*End Container */
+/* start first header */
+.firstheader{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 100px;
+    background-image: linear-gradient(to right, rgba(59, 57, 57, 0), rgb(70, 64, 64));
+    
+}
+.rightfirstheader{
+    display: flex;
+    align-items: center;
+    justify-content:space-between; 
+}
+.rightfirstheader i{
+    color: var(--second-color);  
+    padding: 30px;
+    
+}
+.rightfirstheader a:hover{
+    font-size: 90px;
+}
+.leftfirstheader{
+    display: flex;
+    align-items: center;
+}
+/* end first header */
+/* start second header */
+nav{
+    background-color: var(--header-color);
+    padding: 5px;
+    border-bottom: 2px solid var(--white-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+nav a{
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--white-color);
+    margin-right: 25px;
+}
+nav a:hover{
+    color: var(--second-color);
+    font-size: 18px;
+    
+}
+nav .nav{
+    margin: 2px 30%;
+}
+nav a span{
+    font-size: 10px;
+    padding-left: 5px;
+}
+/* end second header */
+/* start first container */
+.f_container{
+    color: var(--header-color);
+    text-align: center;
+    background-image: url("../asset/thom-holmes-RqASow2Y6Os-unsplash-2048x1365.jpg");
+    height: 50vh;
+    padding: 60px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.f_container h1{
+    font-size: 39px;
+    line-height: 1.2em;
+    color: var(--white-color);
+}
+.f_container h2{
+    font-size: 30px;
+    line-height: 1.2em;
+    color: var(--white-color);
+
+}
+/* start second container */
+.s_h{
+    font-size: 39px;
+    line-height: 1.2em;
+    color: var(--header-color);
+    text-align: center;
+    font-weight: 300px;
+    margin: 20px;
+}
+.s_container{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.s_container img{
+    width: 260px;
+}
+.s_container a{
+    text-decoration: none;
+    position: relative;
+    
+}
+.s_container a h2{
+    position: absolute;
+    left: 22px;
+    top: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.37);
+    padding: 15px 80px;
+    font-size: 14px;
+    color: var(--header-color);
+    background-color:rgba(255, 255, 255, 0.37);
+    
+} 
+
+.s_container a:hover h2{
+    background-color: var(--white-color);
+    box-shadow: 0 10px 10px 0 var(--header-color);
+}
+.s_container a:hover img{
+    box-shadow: 15px 18px 18px #888888;
+
+}
+.s_container a .s_shop{
+    padding: 15px 68px;
+}
+.s_container a .t_shop{
+    padding: 15px 47px;
+}
+.s_container a .f_shop{
+    padding: 15px 88px;
+}
+
+/* end second container */
+/* end third container */
+.t_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px auto;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    padding: 50px;
+}
+.t_container .f_div{
+    width: 5%;
+}
+.t_container .f_div img{
+    width: 220px;
+}
+.t_container .s_div{
+    width: 60%;
+}
+.t_container .s_div h1{
+    font-size: 39px;
+    line-height: 1.2em;
+    color: var(--header-color);
+}
+.t_container .s_div p{
+    font-size: 20px;
+    line-height: 1.2em;
+    color: var(--P-color);
+}
+/* end third container */
+/* start fourth container */
+
+/* end fourth container */
+/* start fifth container */
+
+.fifth_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px auto;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    padding: 50px;
+}
+.fifth_container .fif_div{
+    width: 30%;
+}
+.fifth_container .fif_div img{
+    width: 250px;
+}
+.fifth_container .f_div{
+    width: 60%;
+    text-align: right;
+}
+.fifth_container .f_div h1{
+    font-size: 39px;
+    line-height: 1.2em;
+    color: var(--header-color);
+}
+.fifth_container .f_div p{
+    font-size: 20px;
+    line-height: 1.2em;
+    color: var(--P-color);
+}
+/* end fifth container */
+/* start communication container */
+.commu_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px auto;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    padding: 30px 10px;
+}
+.commu_container a{
+    text-decoration: none;
+    /* width: 10%; */
+}
+.commu_container a:hover{
+    color: var(--second-color);
+   font-size: 20px;
+}
+/* end communication container */
+/* start about */
+.section_about{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px auto;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    padding: 30px 10px;
+    /* align-items: flex-start; */
+    
+}
+.section_about h1{
+    font-size: 30px;
+}
+.section_about a{
+    text-decoration: none;
+
+}
+.section_about a:hover{
+    font-size: 20px;
+}
+.section_about li{
+    list-style: none;
+}
+.section_about .how{
+    width: 20%;
+    line-height: 1.5;
+    text-align: center;
+}
+.section_about .how li{
+    
+    font-size: 16px;
+    color: #94A3B8;
+}
+.section_about .about{
+    width: 20%;
+    text-align: center;
+    line-height: 1.5;
+}
+.section_about .about li{
+    
+    font-size: 16px;
+    color: #94A3B8;
+}
+.section_about .opening{
+    width: 20%;
+    width: 20%;
+    text-align: center;
+    line-height: 1.5;
+}
+.section_about .frame{
+    width: 25%;
+}
+/* end about */
+/* start footer */
+footer{
+    text-align: center;
+}
+footer p{
+    margin: 20px;
+}
+/* end footer */
