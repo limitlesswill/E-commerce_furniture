@@ -1,3 +1,4 @@
+//for scrolling
 const btn = document.getElementsByClassName("ast-arrow-svg")[0];
 
 window.onload = () => {

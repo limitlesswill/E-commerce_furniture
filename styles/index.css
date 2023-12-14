@@ -387,3 +387,25 @@ footer svg {
 }
 
 /* end footer */
+/*start kitchen page */
+.nav .kitchen{
+     color: var(--second-color);
+     
+}
+.headline{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.headline h1{
+    font-size: 32px;
+    font-family:monospace;
+    border-bottom: 1px solid var(--P-color);
+    margin: 20px auto;
+
+
+}
+/*end kitchen page */
+
