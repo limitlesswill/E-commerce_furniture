@@ -5,13 +5,13 @@ let popup;
 let xit;
 
 window.onload = () => {
- login = document.getElementById("login");
- popup = document.getElementsByClassName("popup")[0];
- xit = document.getElementById("xit");
- login.addEventListener("click", togglePopup);
- popup.addEventListener("click", togglePopup);
- xit.addEventListener("click", togglePopup);
-    
+    login = document.getElementById("login");
+    popup = document.getElementsByClassName("popup")[0];
+    xit = document.getElementById("xit");
+    login.addEventListener("click", togglePopup);
+    popup.addEventListener("click", togglePopup);
+    xit.addEventListener("click", togglePopup);
+
     window.document.body.onscroll = () => {
 
         if (document.body.scrollTop || document.documentElement.scrollTop < 760) {
@@ -28,18 +28,18 @@ window.onload = () => {
 }
 
 function togglePopup(e) {
- if (e.target !== this) return;
+    if (e.target !== this) return;
 
- let toggle = (popup.style.display == "") || (popup.style.display == "none");
+    let toggle = (popup.style.display == "") || (popup.style.display == "none");
 
- if (toggle)
-  popup.style.display = "flex";
- else
-  popup.style.display = "none";
+    if (toggle)
+        popup.style.display = "flex";
+    else
+        popup.style.display = "none";
 }
 
 function val(x) {
- x.preventDefault();
- console.log(x);
- return false;
+    x.preventDefault();
+    console.log(x);
+    return false;
 }
