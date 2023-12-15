@@ -24,6 +24,6 @@ $products =
 
 
 
-echo json_encode($products);
+echo $products;
 
 ?>
