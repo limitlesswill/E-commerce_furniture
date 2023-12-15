@@ -25,6 +25,6 @@ $products =
 
 
 
-echo $products;
+var_dump($products);
 
 ?>
