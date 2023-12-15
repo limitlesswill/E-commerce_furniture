@@ -16,6 +16,150 @@
 
 }
 
+/*-----  start of login  -----*/
+
+.popup {
+ box-sizing: border-box;
+ position: fixed;
+ background-color: rgba(0, 0, 0, .4);
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ text-align: center;
+ /* future use*/
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* dramatic effect */
+ z-index: 999;
+ user-select: none;
+ overflow: hidden;
+ display: none;
+}
+
+.popup>#panel {
+ position: relative;
+ overflow: hidden;
+ overflow-y: auto;
+ background-color: white;
+ border-radius: 1em;
+ max-width: 62vw;
+ height: 70vh;
+}
+
+.popup>#panel>header {
+ position: inherit;
+ background-color: white;
+ padding: 1em;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-radius: inherit;
+ font-family: cursive;
+}
+
+.popup>#panel>header>#xit {
+ position: inherit;
+ color: red;
+ font-weight: bolder;
+ margin-top: -0.6em;
+ cursor: pointer;
+}
+
+.popup>#panel>hr {
+ position: inherit;
+ position: relative;
+ color: green;
+ width: 9em;
+ margin-left: 1.5em;
+}
+
+.popup>#panel>form {
+ position: inherit;
+ border-radius: inherit;
+ background-color: inherit;
+ font-family: 'Times New Roman', Times, serif;
+ display: flex;
+ flex-direction: column;
+ padding: 1.2em;
+}
+
+.popup>#panel>form>label {
+ color: rgb(0, 0, 50, 0.3);
+ font-family: inherit;
+ font-size: 14px;
+ text-align: left;
+ padding-left: 3px;
+ margin-bottom: 4px;
+}
+
+.popup>#panel>form>input {
+ position: inherit;
+ width: 100%;
+ height: 45px;
+ border: 1px solid rgba(0, 0, 0, 0.4);
+ border-radius: 7px;
+ font-family: inherit;
+ font-size: 1.5rem;
+ margin-bottom: 20px;
+}
+
+.popup>#panel>form>input:focus {
+ outline: none;
+}
+
+.popup>#panel>form>button:nth-of-type(1) {
+ margin: 0 auto;
+ background-color: transparent;
+ color: #0e1740;
+ border: none;
+ font-family: inherit;
+ font-size: inherit;
+ font-weight: bold;
+ cursor: pointer;
+ margin-bottom: 2em;
+}
+
+.popup>#panel>form>button:nth-of-type(2) {
+ margin: 0 auto;
+ background-color: #1E293B;
+ color: white;
+ font-size: 18px;
+ border-radius: 5px;
+ cursor: pointer;
+ padding: 0.4em 15%;
+ transition: background-color .400s, color .400s;
+}
+
+.popup>#panel>form>button:nth-of-type(2):hover {
+ color: #1E293B;
+ background-color: white;
+ border: 2px solid goldenrod;
+}
+
+.popup>#panel>form>div {
+ position: inherit;
+ margin-top: 30px;
+ margin-bottom: 3px;
+ font-size: 14px;
+}
+
+.popup>#panel>form>div>span {
+ font-family: inherit;
+ color: rgba(50, 50, 50, 0.7);
+}
+
+.popup>#panel>form>div>button {
+ font-family: inherit;
+ font-weight: bold;
+ color: #1E293B;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+}
+/*-----  end of login  -----*/
+
 /*Start Container */
 /* .container{
     padding-left: 15px;
