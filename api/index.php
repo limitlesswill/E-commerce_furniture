@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 
 $products = 
-  "{
+  '{
   "kitchen":[
   {"id":"0","title":"title placeholder","thumbnail":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"},
   {"id":"1","title":"title placeholder","thumbnail":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}
@@ -20,11 +20,11 @@ $products =
   {"id":"0","title":"title placeholder","thumbnail":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"},
   {"id":"1","title":"title placeholder","thumbnail":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"}
   ]
-  }";
+  }';
 
 
 
-
+var_dump(":)");
 var_dump($products);
 
 ?>
