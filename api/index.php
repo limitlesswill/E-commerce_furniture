@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
+header('Content-Type: application/json; charset=utf-8');
 
 $products = 
   '{
@@ -24,7 +25,6 @@ $products =
 
 
 
-var_dump(":)");
-var_dump($products);
+echo json_encode($products);
 
 ?>
