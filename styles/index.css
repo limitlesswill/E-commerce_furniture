@@ -74,14 +74,13 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1;
-    text-align: center;
 }
 
 nav a {
-    text-decoration: none;
-    font-size: 16px;
     color: var(--white-color);
+    text-decoration: none;
     margin-right: 25px;
+    min-width: 90px;
 }
 
 nav a:hover {
@@ -89,13 +88,16 @@ nav a:hover {
 }
 
 nav .nav {
-    margin: 2px 30%;
+    margin: 2px 20%;
+    display: flex;
+    align-items: center;
+    flex-flow:row wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
 }
 
-nav a span {
-    font-size: 10px;
-    padding-left: 5px;
-}
 
 /* end second header */
 
@@ -246,7 +248,8 @@ nav a span {
 }
 
 .fifth_container .fif_div img {
-    width: 250px;
+    width: 30vw;
+    max-width: 250px;
 }
 
 .fifth_container .f_div {
@@ -428,12 +431,12 @@ footer svg {
     text-align: center;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top:25px;
+    margin-top: 25px;
 }
 
 .product-image {
     max-width: 100%;
-    width:250px;
+    width: 250px;
     height: 200px;
     /* height: auto; */
     border-radius: 8px;
