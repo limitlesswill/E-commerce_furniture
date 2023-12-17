@@ -91,7 +91,7 @@ nav .nav {
     margin: 2px 20%;
     display: flex;
     align-items: center;
-    flex-flow:row wrap;
+    flex-flow: row wrap;
     align-content: center;
     justify-content: center;
     text-align: center;
@@ -104,26 +104,32 @@ nav .nav {
 /* start first container */
 .f_container {
     color: var(--header-color);
-    text-align: center;
     background-image: url("../asset/thom-holmes-RqASow2Y6Os-unsplash-2048x1365.jpg");
-    height: 50vh;
-    padding: 60px;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
+    height: 50vh;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-flow: column nowrap;
+    text-align: center;
+    overflow: hidden;
 }
 
 .f_container h1 {
     font-size: 39px;
-    line-height: 1.2em;
     color: var(--white-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 .f_container h2 {
     font-size: 30px;
-    line-height: 1.2em;
     color: var(--white-color);
-
+    margin-right: 25px;
+    margin-bottom: 15px;
+    margin-left: 25px;
 }
 
 /* start second container */
@@ -145,22 +151,24 @@ nav .nav {
 }
 
 .s_container img {
-    width: 20vw;
+    width: 250px;
     height: 43vh;
+    margin: 20px;
 }
 
 .s_container a {
     text-decoration: none;
     position: relative;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
 }
 
 .s_container a h2 {
     position: absolute;
-    /* one can push them down too xD *? 
+    /* one can push them down too xD */
     /* top:36vh; */
     border: 1px solid rgba(255, 255, 255, 0.37);
     padding: 15px 80px;
