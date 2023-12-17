@@ -87,8 +87,6 @@ nav a {
 
 nav a:hover {
     color: var(--second-color);
-    font-size: 18px;
-
 }
 
 nav .nav {
@@ -355,7 +353,7 @@ nav a span {
 }
 
 .section_about .frame {
-    width: 25%;
+    margin-top: 25px;
 }
 
 /* end about */
