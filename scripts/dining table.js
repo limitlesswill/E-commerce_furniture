@@ -1,11 +1,16 @@
 var allproducts;
+var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../JSON/products.json");
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     allproducts = JSON.parse(xhr.responseText);
     draw_products(allproducts);
-    //console.log(allproducts);
+    // console.log(allproducts);
+    for (let i = 0; i < addToCartButtons.length; i++) {
+      var button = addToCartButtons[i];
+      button.addEventListener("click", addToCartClicked);
+    }
   }
 };
 xhr.send();
@@ -40,6 +45,19 @@ function draw_products(allproducts) {
       cart.appendChild(button);
 
       diningtable.appendChild(cart);
+    }
+  }
+}
+
+var prod_id_InLocalStorage = [];  //  array that get ids of products in the added it to local storage "empty array when delete local storage"
+function addToCartClicked(event) {
+  var button = event.target;
+  var _shopItem = button.parentElement;
+  var prod_name = _shopItem.getElementsByClassName("product-name")[0].innerText;
+  for (let i = 0; i < allproducts.length; i++) {
+    if (allproducts[i].product_name == prod_name) {
+      prod_id_InLocalStorage.push(allproducts[i].product_id);
+      localStorage.ProductIdInDinnerToCart = prod_id_InLocalStorage;
     }
   }
 }
