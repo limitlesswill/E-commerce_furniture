@@ -56,6 +56,12 @@ function addToCartClicked(event) {
   var prod_name = _shopItem.getElementsByClassName("product-name")[0].innerText;
   for (let i = 0; i < allproducts.length; i++) {
     if (allproducts[i].product_name == prod_name) {
+      for (let r = 0; r < prod_id_InLocalStorage.length; r++) {
+        if (prod_id_InLocalStorage[r] == allproducts[i].product_id) {
+          alert("This Item is already added to cart")
+          return;
+        }
+      }
       prod_id_InLocalStorage.push(allproducts[i].product_id);
       localStorage.ProductIdInOfficeToCart = prod_id_InLocalStorage;
     }
