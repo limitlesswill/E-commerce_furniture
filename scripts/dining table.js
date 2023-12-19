@@ -26,6 +26,8 @@ function draw_products(allproducts) {
       var h2 = document.createElement("h2");
       var h3 = document.createElement("h3");
       var button = document.createElement("button");
+      var input = document.createElement("input");
+
 
       img.classList.add("product-image");
       img.setAttribute("alt", "Product Image");
@@ -33,37 +35,46 @@ function draw_products(allproducts) {
       h3.classList.add("product-cost");
       button.classList.add("add-to-cart-button");
       cart.classList.add("cart");
+      input.setAttribute("type", "hidden");
+      input.classList.add("cart-input");
 
       img.src = allproducts[i].photo;
       h2.textContent = allproducts[i].product_name;
       h3.textContent = allproducts[i].product_cost;
       button.textContent = "Add to Cart";
+      input.value = allproducts[i].product_id;
+
 
       cart.appendChild(img);
       cart.appendChild(h2);
       cart.appendChild(h3);
       cart.appendChild(button);
+      cart.appendChild(input);
+
 
       diningtable.appendChild(cart);
     }
   }
 }
 
-var prod_id_InLocalStorage = [];  //  array that get ids of products in the added it to local storage "empty array when delete local storage"
+var prod_id_InSessionStorage = [];  //  array that get ids of products in the added it to local storage "empty array when delete local storage"
 function addToCartClicked(event) {
   var button = event.target;
   var _shopItem = button.parentElement;
-  var prod_name = _shopItem.getElementsByClassName("product-name")[0].innerText;
-  for (let i = 0; i < allproducts.length; i++) {
-    if (allproducts[i].product_name == prod_name) {
-      for (let r = 0; r < prod_id_InLocalStorage.length; r++) {
-        if (prod_id_InLocalStorage[r] == allproducts[i].product_id) {
-          alert("This Item is already added to cart")
-          return;
-        }
+  var prod_id = _shopItem.getElementsByClassName("cart-input")[0];
+  var arr = JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
+  if (arr == null) {
+    prod_id_InSessionStorage.push(prod_id.value);
+    sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(prod_id_InSessionStorage));
+  } else {
+    for (let r = 0; r < prod_id_InSessionStorage.length; r++) {
+      if (prod_id_InSessionStorage[r] == prod_id.value) {
+        alert("This Item is already added to cart")
+        return;
       }
-      prod_id_InLocalStorage.push(allproducts[i].product_id);
-      localStorage.ProductIdInDinnerToCart = prod_id_InLocalStorage;
     }
+    prod_id_InSessionStorage = JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
+    prod_id_InSessionStorage.push(prod_id.value);
+    sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(prod_id_InSessionStorage));
   }
 }
