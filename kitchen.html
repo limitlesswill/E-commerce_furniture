@@ -144,6 +144,41 @@
         </div>
     </footer>
 
+
+
+    <!-- Login and Register POP Up -->
+    <div class="overlay" id="loginOverlay">
+        <div class="popup">
+            <span class="close-btn" onclick="closePopup('loginOverlay')">&times;</span>
+            <h2>Login</h2>
+            <form action="">
+                <input class="input" type="email" id="email" placeholder="E-mail" required><br><br>
+                <input class="input" type="password" id="password" placeholder="PassWord" required><br><br>
+
+                <input class="btn" type="button" value="Log in" onclick="login()">
+
+                <p class="toggle-btn" onclick="togglePopup('loginOverlay', 'registerOverlay')">Don't have an account?Register here.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Popup -->
+    <div class="overlay" id="registerOverlay">
+        <div class="popup">
+            <span class="close-btn" onclick="closePopup('registerOverlay')">&times;</span>
+            <h2>Register</h2>
+            <form action="">
+                <input class="input" type="text" id="username" placeholder="User Name"><br><br>
+                <input class="input" type="email" id="email-register" placeholder="E-mail"><br><br>
+                <input class="input" type="password" id="password-register" placeholder="PassWord"><br><br>
+                <input class="input" type="password" id="confirmpassword-register" placeholder="Confirm PassWord"><br><br>
+                <input class="btn up" type="button" value="Sign Up" onclick="signup()">
+
+                <p class="toggle-btn" onclick="togglePopup('registerOverlay', 'loginOverlay')">Already have an account?
+                    Login here.</p>
+            </form>
+        </div>
+    </div>
     <script src="./scripts/index.js" type="text/javascript"></script>
     <script src="./scripts/kitchen.js" type="text/javascript"></script>
 
