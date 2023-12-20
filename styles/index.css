@@ -12,38 +12,37 @@
     --second-color: #e2e434;
     --header-color: #1E293B;
     --P-color: #334155;
-
-
 }
 
 /* start first header */
 .firstheader {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     height: 100px;
     background-image: linear-gradient(to right, rgba(59, 57, 57, 0), rgb(70, 64, 64));
-
+    overflow: hidden;
 }
 
 .rightfirstheader {
     display: flex;
-    align-items: center;
+    flex-flow: row wrap;
     justify-content: space-between;
-}
-
-.rightfirstheader i {
+    align-items: center;
+    width: 100px;
     color: var(--second-color);
-    padding: 30px;
 }
 
-.rightfirstheader a:hover {
+.rightfirstheader span:hover {
     font-size: 90px;
 }
 
 .leftfirstheader {
     display: flex;
     align-items: center;
+}
+
+.slogan {
+    color: black;
 }
 
 /* end first header */
@@ -291,14 +290,14 @@ nav .nav {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    gap:20px;
+    gap: 20px;
     /* to center elements in the middle ( i wouldn't recomment it )*/
     align-items: center;
     align-content: center;
     margin: 15px auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding: 30px 10px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .section_about a {
