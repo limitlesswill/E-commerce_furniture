@@ -16,24 +16,6 @@
 
 }
 
-
-/*Start Container */
-/* .container{
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media (min-width:768px) {
-    .container{width: 750px;}
-}
-@media (min-width:992px) {
-    .container{width: 970px;}
-}
-@media (min-width:1200px) {
-    .container{width: 1170px;}
-} */
-/*End Container */
 /* start first header */
 .firstheader {
     display: flex;
@@ -95,7 +77,6 @@ nav .nav {
     align-content: center;
     justify-content: center;
     text-align: center;
-    height: 40px;
 }
 
 
@@ -308,23 +289,20 @@ nav .nav {
 /* start about */
 .section_about {
     display: flex;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap:20px;
+    /* to center elements in the middle ( i wouldn't recomment it )*/
     align-items: center;
-    flex-wrap: wrap;
+    align-content: center;
     margin: 15px auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding: 30px 10px;
-    /* align-items: flex-start; */
-
-}
-
-.section_about h1 {
-    font-size: 30px;
+    overflow:hidden;
 }
 
 .section_about a {
     text-decoration: none;
-
 }
 
 .section_about a:hover {
@@ -335,34 +313,50 @@ nav .nav {
     list-style: none;
 }
 
-.section_about .how {
-    width: 20%;
-    line-height: 1.5;
-    text-align: center;
+.how>ul {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.how>ul>li>h1 {
+    color: black;
 }
 
 .section_about .how li {
-
-    font-size: 16px;
     color: #94A3B8;
 }
 
-.section_about .about {
-    width: 20%;
-    text-align: center;
-    line-height: 1.5;
+.section_about .how {
+    border:5px solid green;
 }
+.section_about .about {
+    border:1px solid red;
+}
+
+.about>ul>li>h1 {
+    color: black;
+}
+
+.section_about .about>ul {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 
 .section_about .about li {
-
     font-size: 16px;
     color: #94A3B8;
 }
 
-.section_about .opening {
-    width: 20%;
-    text-align: left;
-    line-height: 1.5;
+.section_about .opening>ul {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 15px;
+}
+
+.section_about .opening>ul>li {
+    display: flex;
+    justify-content: space-between;
 }
 
 .section_about .frame {
