@@ -326,13 +326,6 @@ nav .nav {
     color: #94A3B8;
 }
 
-.section_about .how {
-    border:5px solid green;
-}
-.section_about .about {
-    border:1px solid red;
-}
-
 .about>ul>li>h1 {
     color: black;
 }
