@@ -186,7 +186,7 @@ function login() {
           "password": account[i].password
         }
         sessionStorage.setItem("account", JSON.stringify(user));
-
+        closePopup('loginOverlay');
         // location.assign("./project1.html");
       }
     }
