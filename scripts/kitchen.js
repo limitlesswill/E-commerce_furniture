@@ -50,7 +50,7 @@ function draw_products(allproducts) {
       cart.appendChild(h3);
       cart.appendChild(button);
       cart.appendChild(input);
-      
+
 
       Kitchen.appendChild(cart);
     }
@@ -78,4 +78,5 @@ function addToCartClicked(event) {
     prod_id_InSessionStorage.push(prod_id.value);
     sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(prod_id_InSessionStorage));
   }
+  notifyNow();
 }

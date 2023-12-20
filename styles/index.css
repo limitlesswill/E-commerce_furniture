@@ -17,6 +17,7 @@
 /* start first header */
 .firstheader {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     height: 100px;
     background-image: linear-gradient(to right, rgba(59, 57, 57, 0), rgb(70, 64, 64));
@@ -32,17 +33,37 @@
     color: var(--second-color);
 }
 
+/* start of user, cart icons */
 .downeffect {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    width: 40%;
     height: 50%;
+    position: relative;
 }
 
 .downeffect:hover {
     height: 100%;
     padding-top: 50%;
 }
+
+#notif {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(230, 0, 0, 0.8);
+    color: white;
+    border-radius: 70%;
+    position: absolute;
+    top: 5px;
+    right: 9px;
+}
+
+/* end of user, cart icons */
 
 .leftfirstheader {
     display: flex;
@@ -63,7 +84,6 @@ nav {
     border-bottom: 2px solid var(--white-color);
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 nav a {
@@ -142,6 +162,7 @@ nav .nav {
     width: 250px;
     height: 43vh;
     margin: 20px;
+    z-index: -1;
 }
 
 .s_container a {
@@ -152,6 +173,7 @@ nav .nav {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+    z-index: -1;
 }
 
 .s_container a h2 {

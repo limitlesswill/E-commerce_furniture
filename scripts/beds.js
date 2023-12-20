@@ -76,4 +76,5 @@ function addToCartClicked(event) {
     prod_id_InSessionStorage.push(prod_id.value);
     sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(prod_id_InSessionStorage));
   }
+  notifyNow();
 }
