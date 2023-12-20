@@ -28,12 +28,20 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
+    width: 105px;
     color: var(--second-color);
 }
 
-.rightfirstheader span:hover {
-    font-size: 90px;
+.downeffect {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 50%;
+}
+
+.downeffect:hover {
+    height:100%;
+    padding-top:50%;
 }
 
 .leftfirstheader {
@@ -42,9 +50,9 @@
 }
 
 .slogan {
+    margin-left: 5px;
     color: black;
 }
-
 /* end first header */
 
 /* start second header */
@@ -77,8 +85,6 @@ nav .nav {
     justify-content: center;
     text-align: center;
 }
-
-
 /* end second header */
 
 /* start first container */
@@ -193,15 +199,13 @@ nav .nav {
 }
 
 .t_container .f_div {
-    width: 5%;
-}
-
-.t_container .f_div img {
     width: 220px;
+    border: 1px solid red;
 }
 
 .t_container .s_div {
-    width: 60%;
+    width: 40vw;
+    border: 1px solid green;
 }
 
 .t_container .s_div h1 {
@@ -349,6 +353,12 @@ nav .nav {
 .section_about .opening>ul>li {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+}
+
+.section_about .opening>ul>li:nth-child(1) {
+    /* padding-left:10px; */
+    align-items: center;
 }
 
 .section_about .frame {
@@ -381,10 +391,10 @@ footer svg {
     right: 30px;
     width: 35px;
     height: 30px;
-
 }
 
 /* end footer */
+
 /*start kitchen page */
 .nav .kitchen {
     color: var(--second-color);
@@ -409,6 +419,7 @@ footer svg {
 }
 
 /*end kitchen page */
+
 /* start cart */
 .products {
     display: flex;
