@@ -4,7 +4,7 @@ console.log(gettAllid.length);
 
 
 var allproducts;
-// var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
+var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../JSON/products.json");
 xhr.onreadystatechange = function () {
@@ -56,15 +56,18 @@ function draw_products(allproducts) {
       cart.appendChild(input);
 
       allCart.appendChild(cart);
-     
-      console.log(allproducts[i]);
+    //   console.log(j);
+    //   j++;
+      console.log(j);
+
+      if(j>allCart.length){ 
+      console.log(j);
+        break;
+        };
+      j++;
+      console.log(j);
 
     }
-    // console.log(j);
-    // console.log(gettAllid[j]);
-    
-    j++;
-    // if(j >=gettAllid.length){console.log("stop");};
   }
 }
 
