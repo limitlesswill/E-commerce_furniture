@@ -56,16 +56,9 @@ function draw_products(allproducts) {
       cart.appendChild(input);
 
       allCart.appendChild(cart);
-    //   console.log(j);
-    //   j++;
-      console.log(j);
-
-      if(j>allCart.length){ 
-      console.log(j);
-        break;
-        };
+    
       j++;
-      console.log(j);
+     
 
     }
   }
