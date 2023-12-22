@@ -22,7 +22,6 @@
     justify-content: space-around;
     height: 100px;
     background-image: linear-gradient(to right, rgba(59, 57, 57, 0), rgb(70, 64, 64));
-    overflow: hidden;
 }
 
 .rightfirstheader {
@@ -58,6 +57,7 @@
     align-items: center;
     background-color: rgba(230, 0, 0, 0.8);
     color: white;
+    font-weight: bolder;
     border-radius: 70%;
     position: absolute;
     top: 5px;
@@ -68,10 +68,13 @@
 
 .leftfirstheader {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
 }
 
 .slogan {
+    display: flex;
+    flex-flow: column wrap;
     margin-left: 5px;
     color: black;
 }
@@ -118,24 +121,22 @@ nav .nav {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    /* height: 50vh; */
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     flex-flow: column nowrap;
     text-align: center;
-    overflow: hidden;
 }
 
 .f_container h1 {
-    font-size: 39px;
+    font-size: calc(16px + 2vw);
     color: var(--white-color);
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
 .f_container h2 {
-    font-size: 30px;
+    font-size: calc(16px + 1vw);
     color: var(--white-color);
     margin-right: 25px;
     margin-bottom: 15px;
@@ -146,20 +147,23 @@ nav .nav {
 
 /* start fourth container */
 .s_h {
-    font-size: 39px;
-    line-height: 1.2em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     color: var(--header-color);
-    text-align: center;
-    font-weight: 300px;
-    margin: 20px;
+    margin: 2vw;
+    font-size: calc(16px + 2vw);
 }
 
 .s_container {
-    margin-bottom: 50px;
+    margin-bottom: 8vh;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    width: 98vw;
 }
 
 .s_container a {
@@ -175,6 +179,7 @@ nav .nav {
 .s_container img {
     width: 250px;
     height: 43vh;
+    min-height: 60px;
     margin: 20px;
 }
 
@@ -221,11 +226,15 @@ nav .nav {
     margin: 15px auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding: 50px;
-    border: 5px solid red;
 }
 
 .t_container .f_div {
-    width: 220px;
+    width: 30%;
+}
+
+.t_container .f_div img {
+    width: 50vw;
+    max-width: 300px;
 }
 
 .t_container .s_div {
@@ -244,6 +253,7 @@ nav .nav {
     color: var(--P-color);
 }
 
+
 /* end fifth container */
 
 /* start sixth container */
@@ -257,11 +267,11 @@ nav .nav {
     padding: 50px;
 }
 
-.sixth_container .fif_div {
+.sixth_container .six_div {
     width: 30%;
 }
 
-.sixth_container .fif_div img {
+.sixth_container .six_div img {
     width: 30vw;
     max-width: 250px;
 }
@@ -321,7 +331,6 @@ nav .nav {
     margin: 15px auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding: 30px 10px;
-    overflow: hidden;
 }
 
 .section_about a {
@@ -565,3 +574,312 @@ footer svg {
 }
 
 /* end login and register */
+
+
+/* 
+
+this must be in the bottom
+
+start view in screens less than 600px 
+
+*/
+@media screen and (max-width:600px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* start first header */
+    .firstheader {
+        display: inline-block;
+        position: relative;
+        width: 100vw;
+        height: auto;
+    }
+
+    .firstheader>*:nth-child(1) {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        width: calc(100vw - 6px);
+    }
+
+    .firstheader>*:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slogan {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        font-size: 6vw;
+    }
+
+    .firstheader>*:nth-child(2) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 100vw;
+    }
+
+    .firstheader>*:nth-child(2) * {
+        width: 40vw;
+    }
+
+    .downeffect {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        width: 40%;
+        height: 50%;
+        position: relative;
+    }
+
+    .downeffect:hover {
+        width: 40vw;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    #notif {
+        position: absolute;
+        top: -2vw;
+        left: 50%;
+    }
+
+    /* end first header */
+
+    /* start second header */
+    nav {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        z-index: 99;
+    }
+
+    nav .nav {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    nav .nav>a {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        min-width: unset;
+        font-size: 4vw;
+        width: 40vw;
+    }
+
+    /* end second header */
+
+    /* start third container */
+    .f_container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-image: linear-gradient(to top, rgba(59, 57, 57, 0), rgb(70, 64, 64));
+    }
+
+    .f_container h1,
+    .f_container h2 {
+        font-size: 5vw;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 1vw;
+        color: var(--header-color);
+    }
+
+    /* end third container */
+
+    /* start fourth container */
+    .s_h {
+        margin-top: 5vw;
+        font-size: calc(8px + 4vw);
+    }
+
+    .s_container {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        width: 100vw;
+    }
+
+    .s_container a {
+        margin-bottom: 5vh;
+    }
+
+    .s_container img {
+        width: 50vw;
+        height: 50vw;
+        margin: 0;
+    }
+
+    .s_container a h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 6vw;
+    }
+
+    .s_container a .s_shop {
+        padding: 0;
+        margin: 0;
+        font-size: 6vw;
+    }
+
+    .s_container a .t_shop {
+        padding: 0;
+        margin: 0;
+        font-size: 6vw;
+    }
+
+    .s_container a .f_shop {
+        padding: 0;
+        margin: 0;
+        font-size: 6vw;
+    }
+
+    /* end fourth container */
+
+    /* start fifth and seventh and sixth container respectively */
+    .t_container,
+    .sixth_container {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 100vw;
+        padding-bottom: 4vw;
+        margin-bottom: 4vw;
+    }
+
+    .t_container .f_div,
+    .sixth_container .six_div {
+        max-width: 90%;
+    }
+
+    .t_container .f_div img,
+    .sixth_container .six_div img {
+        width: 40vw;
+        position: absolute;
+        top: 20%;
+        right: 30%;
+        bottom: 30%;
+        left: 30%;
+        opacity: 0.4;
+    }
+
+    .t_container .s_div,
+    .sixth_container .f_div {
+        font-size: 4vw;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .t_container .s_div h1,
+    .sixth_container .f_div h1 {
+        align-self: center;
+        font-size: 4vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        color: var(--header-color);
+    }
+
+    .t_container .s_div p,
+    .sixth_container .f_div p {
+        width: 90vw;
+        font-size: 4vw;
+        text-align: center;
+        color: var(--P-color);
+    }
+
+    /* end fifth and seventh and sixth container respectively */
+
+    /* start communication container */
+    .commu_container {
+        margin: 0;
+        padding: 2vw;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .commu_container a {
+        display: flex;
+        align-items: center;
+        width: 40vw;
+        font-size: 5vw;
+    }
+
+    .commu_container a sub {
+        margin-right: 2vw;
+    }
+
+    .commu_container a svg {
+        font-size: 4vw;
+    }
+
+    /* end communication container */
+
+    /* start section_about */
+    .section_about {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100vw;
+    }
+
+    .section_about .how ul,
+    .section_about .about ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section_about .how ul,
+    .section_about .about ul h1,
+    .section_about .opening ul h1 {
+        font-size: 8vw;
+    }
+
+    .section_about .how ul,
+    .section_about .about ul a,
+    .section_about .opening ul li {
+        font-size: 6vw;
+    }
+
+    .section_about .frame iframe {
+        width: 99vw;
+    }
+
+    /* end section_about */
+
+    /* start footer */
+    footer p{
+        font-size: 4vw;
+    }
+    /* end footer */
+
+
+}
+
+/* end view in screens less than 600px */
