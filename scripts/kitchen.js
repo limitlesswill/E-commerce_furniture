@@ -215,19 +215,19 @@ function logOutBtn() {
 }
 
 //////////////// user name in log in
-var getuserName=JSON.parse(sessionStorage.getItem("account"));
+// var getuserName=JSON.parse(sessionStorage.getItem("account"));
 
-var userName=document.getElementById("userName");
+// var userName=document.getElementById("userName");
 
-if(getuserName==null){
+// if(getuserName==null){
   
-  userName.innerHTML="Log in";
+//   userName.innerHTML="Log in";
   
-}
-else{
+// }
+// else{
   
-  userName.innerHTML=getuserName.email;
-}
+//   userName.innerHTML=getuserName.email;
+// }
 
 
 
