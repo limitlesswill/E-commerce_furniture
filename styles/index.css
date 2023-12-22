@@ -43,10 +43,10 @@
     position: relative;
 }
 
-.downeffect:hover {
+/* .downeffect:hover {
     height: 100%;
     padding-top: 50%;
-}
+} */
 
 #notif {
     width: 20px;
@@ -525,7 +525,8 @@ body {
 }
 
 .popup {
-    background-color:#658effc2;
+    /* background-color:#658effc2; */
+    background-image: linear-gradient(360deg,#b3d9ff, #3399ff, #000d1a );
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -553,8 +554,10 @@ body {
     padding-top: 10px ;
 }
 
+
 .btn {
-    background-color: #004080;
+    /* background-color: #004080; */
+    background-image: linear-gradient(to right,#b3d9ff, #3399ff );
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -564,7 +567,9 @@ body {
 }
 
 .btn:hover {
-    background-color: #004da0;
+    /* background-color: #004da0; */
+    background-image: linear-gradient(to right , #3399ff ,#b3d9ff);
+
 }
 
 .input {
@@ -574,3 +579,9 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.overlay h2{
+    color: white;
+}
+
+s

@@ -40,7 +40,7 @@ function draw_products(allproducts) {
 
       img.src = allproducts[i].photo;
       h2.textContent = allproducts[i].product_name;
-      h3.textContent = allproducts[i].product_cost+"$";
+      h3.textContent = allproducts[i].product_cost + "$";
       button.textContent = "Add to Cart";
       input.value = allproducts[i].product_id;
 
@@ -204,4 +204,8 @@ function closePopup(id) {
 function togglePopup(closeId, openId) {
   closePopup(closeId);
   openPopup(openId);
+}
+function logOutBtn() {
+  sessionStorage.removeItem("account");
+  sessionStorage.removeItem("prod_id_InSessionStorage")
 }

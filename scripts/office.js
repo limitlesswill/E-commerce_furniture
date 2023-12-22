@@ -227,3 +227,7 @@ function togglePopup(closeId, openId) {
   closePopup(closeId);
   openPopup(openId);
 }
+function logOutBtn() {
+  sessionStorage.removeItem("account");
+  sessionStorage.removeItem("prod_id_InSessionStorage")
+}
