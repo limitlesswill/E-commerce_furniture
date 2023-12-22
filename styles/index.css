@@ -871,6 +871,7 @@ start view in screens less than 600px
     .section_about .about ul a,
     .section_about .opening ul li {
         font-size: 6vw;
+        gap:3vw;
     }
 
     .section_about .frame iframe {
