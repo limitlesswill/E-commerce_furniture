@@ -12,6 +12,7 @@
     --second-color: #e2e434;
     --header-color: #1E293B;
     --P-color: #334155;
+    font-family: Arial, sans-serif;
 }
 
 /* start first header */
@@ -84,6 +85,7 @@ nav {
     border-bottom: 2px solid var(--white-color);
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 
 nav a {
@@ -109,7 +111,7 @@ nav .nav {
 
 /* end second header */
 
-/* start first container */
+/* start third container */
 .f_container {
     color: var(--header-color);
     background-image: url("../asset/thom-holmes-RqASow2Y6Os-unsplash-2048x1365.jpg");
@@ -140,7 +142,9 @@ nav .nav {
     margin-left: 25px;
 }
 
-/* start second container */
+/* end third container */
+
+/* start fourth container */
 .s_h {
     font-size: 39px;
     line-height: 1.2em;
@@ -158,13 +162,6 @@ nav .nav {
     flex-wrap: wrap;
 }
 
-.s_container img {
-    width: 250px;
-    height: 43vh;
-    margin: 20px;
-    z-index: -1;
-}
-
 .s_container a {
     text-decoration: none;
     position: relative;
@@ -173,7 +170,21 @@ nav .nav {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    z-index: -1;
+}
+
+.s_container img {
+    width: 250px;
+    height: 43vh;
+    margin: 20px;
+}
+
+.s_container a:hover h2 {
+    background-color: var(--white-color);
+    box-shadow: 0 10px 10px 0 var(--header-color);
+}
+
+.s_container a:hover img {
+    box-shadow: 15px 18px 18px #888888;
 }
 
 .s_container a h2 {
@@ -185,16 +196,6 @@ nav .nav {
     font-size: 14px;
     color: var(--header-color);
     background-color: rgba(255, 255, 255, 0.37);
-}
-
-.s_container a:hover h2 {
-    background-color: var(--white-color);
-    box-shadow: 0 10px 10px 0 var(--header-color);
-}
-
-.s_container a:hover img {
-    box-shadow: 15px 18px 18px #888888;
-
 }
 
 .s_container a .s_shop {
@@ -209,9 +210,9 @@ nav .nav {
     padding: 15px 88px;
 }
 
-/* end second container */
+/* end fourth container */
 
-/* end third container */
+/* start fifth container and it the same as seventh container */
 .t_container {
     display: flex;
     justify-content: space-around;
@@ -220,6 +221,7 @@ nav .nav {
     margin: 15px auto;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
     padding: 50px;
+    border: 5px solid red;
 }
 
 .t_container .f_div {
@@ -242,15 +244,10 @@ nav .nav {
     color: var(--P-color);
 }
 
-/* end third container */
+/* end fifth container */
 
-/* start fourth container */
-
-/* end fourth container */
-
-/* start fifth container */
-
-.fifth_container {
+/* start sixth container */
+.sixth_container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -260,33 +257,33 @@ nav .nav {
     padding: 50px;
 }
 
-.fifth_container .fif_div {
+.sixth_container .fif_div {
     width: 30%;
 }
 
-.fifth_container .fif_div img {
+.sixth_container .fif_div img {
     width: 30vw;
     max-width: 250px;
 }
 
-.fifth_container .f_div {
+.sixth_container .f_div {
     width: 60%;
     text-align: right;
 }
 
-.fifth_container .f_div h1 {
+.sixth_container .f_div h1 {
     font-size: 39px;
     line-height: 1.2em;
     color: var(--header-color);
 }
 
-.fifth_container .f_div p {
+.sixth_container .f_div p {
     font-size: 20px;
     line-height: 1.2em;
     color: var(--P-color);
 }
 
-/* end fifth container */
+/* end sixth container */
 
 /* start communication container */
 .commu_container {
@@ -503,15 +500,7 @@ footer svg {
 
 /* end cart */
 
-
-
-
-
-/* ////////////////////////////////////// Login and Register //////////////////////////////////////*/
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* start login and register */
 .overlay {
     display: none;
     position: fixed;
@@ -525,7 +514,7 @@ body {
 }
 
 .popup {
-    background-color:#658effc2;
+    background-color: #658effc2;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -550,7 +539,7 @@ body {
     color: rgb(0, 0, 0);
     text-decoration: underline;
     margin-top: auto;
-    padding-top: 10px ;
+    padding-top: 10px;
 }
 
 .btn {
@@ -574,3 +563,5 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+/* end login and register */
