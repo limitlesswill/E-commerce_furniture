@@ -40,7 +40,7 @@ function draw_products(allproducts) {
 
       img.src = allproducts[i].photo;
       h2.textContent = allproducts[i].product_name;
-      h3.textContent = allproducts[i].product_cost;
+      h3.textContent = allproducts[i].product_cost + "$";
       button.textContent = "Add to Cart";
       input.value = allproducts[i].product_id;
 
@@ -205,3 +205,22 @@ function togglePopup(closeId, openId) {
   closePopup(closeId);
   openPopup(openId);
 }
+function logOutBtn() {
+  sessionStorage.removeItem("account");
+  sessionStorage.removeItem("prod_id_InSessionStorage")
+}
+//////////////// user name in log in
+// var getuserName=JSON.parse(sessionStorage.getItem("account"));
+
+// var userName=document.getElementById("userName");
+
+// if(getuserName==null){
+  
+//   userName.innerHTML="Log in";
+  
+// }
+// else{
+  
+//   userName.innerHTML=getuserName.email;
+// }
+

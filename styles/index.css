@@ -43,10 +43,10 @@
     position: relative;
 }
 
-.downeffect:hover {
+/* .downeffect:hover {
     height: 100%;
     padding-top: 50%;
-}
+} */
 
 #notif {
     width: 20px;
@@ -541,6 +541,8 @@ footer svg {
     top: 10px;
     right: 10px;
     z-index: 10;
+    background-color: #3399ff;
+    padding: 5px 10px;
 }
 
 .toggle-btn {
@@ -551,8 +553,10 @@ footer svg {
     padding-top: 10px;
 }
 
+
 .btn {
-    background-color: #004080;
+    /* background-color: #004080; */
+    background-image: linear-gradient(to right,#b3d9ff, #3399ff );
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -562,7 +566,9 @@ footer svg {
 }
 
 .btn:hover {
-    background-color: #004da0;
+    /* background-color: #004da0; */
+    background-image: linear-gradient(to right , #3399ff ,#b3d9ff);
+
 }
 
 .input {
@@ -883,3 +889,7 @@ start view in screens less than 600px
 }
 
 /* end view in screens less than 600px */
+.overlay h2{
+    color: white;
+}
+
