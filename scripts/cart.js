@@ -56,3 +56,19 @@ xhr.onreadystatechange = function () {
 };
 xhr.send();
 
+//////////////// user name in log in
+var getuserName=JSON.parse(sessionStorage.getItem("account"));
+
+var userName=document.getElementById("userName");
+
+if(getuserName==null){
+  
+  userName.innerHTML="Log in";
+  
+}
+else{
+  
+  userName.innerHTML=getuserName.email;
+}
+
+
