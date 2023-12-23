@@ -683,7 +683,8 @@ footer svg {
 }
 
 .popup {
-    background-color: #658effc2;
+    /* background-color: #658effc2; */
+    background-image: linear-gradient(360deg,#b3d9ff, #3399ff, #000d1a );
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
