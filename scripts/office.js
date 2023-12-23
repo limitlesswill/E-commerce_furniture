@@ -1,12 +1,18 @@
 var allproducts;
 var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
+var office = document.getElementById("office");
+
+let off = [];
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../JSON/products.json");
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     allproducts = JSON.parse(xhr.responseText);
     draw_products(allproducts);
-    //console.log(allproducts);
+
+    initFilter(off,office);
+    
     for (let i = 0; i < addToCartButtons.length; i++) {
       var button = addToCartButtons[i];
       button.addEventListener("click", addToCartClicked);
@@ -14,9 +20,8 @@ xhr.onreadystatechange = function () {
   }
 };
 xhr.send();
-//////////draw function
 
-var office = document.getElementById("office");
+//////////draw function
 
 function draw_products(allproducts) {
   for (var i = 0; i < allproducts.length; i++) {
@@ -53,6 +58,7 @@ function draw_products(allproducts) {
 
 
       office.appendChild(cart);
+      off.push(allproducts[i]);
     }
   }
 }
