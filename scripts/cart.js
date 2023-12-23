@@ -64,7 +64,7 @@ xhr.onreadystatechange = function () {
     
   }
   totalSalary.innerHTML="Total salary equal " + d +"$";
-  
+  //////////////////// remove buttons
   var removeCartButton = document.getElementsByClassName("add-to-cart-button-danger");
   for (let i = 0; i < removeCartButton.length; i++) {
     var _button = removeCartButton[i];
@@ -87,6 +87,7 @@ xhr.onreadystatechange = function () {
    _button.parentElement.remove();
    updateCartTotal();
   }
+  ///////////////////////  quantity input 
   function quantityChanged(event){
     _input=event.target;
     if (isNaN(_input.value) || _input.value<0 || _input.value =="") {
@@ -95,6 +96,7 @@ xhr.onreadystatechange = function () {
     updateCartTotal();
 
   }
+  ////////////////////// update total of the cart
   function updateCartTotal(){
      var cartProductRows=document.getElementsByClassName("cart");
      var total=0;
