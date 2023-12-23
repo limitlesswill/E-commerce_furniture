@@ -501,7 +501,24 @@ footer svg {
 .add-to-cart-button:hover {
     background-color: #45a049;
 }
+.add-to-cart-button-danger{
+    background-color: rgba(230, 0, 0, 0.7) ;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+.add-to-cart-button-danger:hover{
+    background-color: rgba(230, 0, 0, 1) ;
 
+}
+.product-quantity{
+    width: 100px;
+    height: 37px;
+}
 /* end cart */
 
 /* start login and register */
