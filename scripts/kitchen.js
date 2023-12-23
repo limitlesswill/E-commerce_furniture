@@ -1,12 +1,18 @@
 var allproducts;
 var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
+var Kitchen = document.getElementById("Kitchen");
+
+let kit = [];
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../JSON/products.json");
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     allproducts = JSON.parse(xhr.responseText);
     draw_products(allproducts);
-    //console.log(allproducts);
+
+    initFilter(kit,Kitchen);
+    
     for (let i = 0; i < addToCartButtons.length; i++) {
       var button = addToCartButtons[i];
       button.addEventListener("click", addToCartClicked);
@@ -14,9 +20,8 @@ xhr.onreadystatechange = function () {
   }
 };
 xhr.send();
-//////////draw function
 
-var Kitchen = document.getElementById("Kitchen");
+//////////draw function
 
 function draw_products(allproducts) {
   for (var i = 0; i < allproducts.length; i++) {
@@ -27,8 +32,8 @@ function draw_products(allproducts) {
       var h3 = document.createElement("h3");
       var button = document.createElement("button");
       var input = document.createElement("input");
-
-
+      
+      
       img.classList.add("product-image");
       img.setAttribute("alt", "Product Image");
       h2.classList.add("product-name");
@@ -37,22 +42,23 @@ function draw_products(allproducts) {
       cart.classList.add("cart");
       input.setAttribute("type", "hidden");
       input.classList.add("cart-input");
-
+      
       img.src = allproducts[i].photo;
       h2.textContent = allproducts[i].product_name;
       h3.textContent = allproducts[i].product_cost+"$";
       button.textContent = "Add to Cart";
       input.value = allproducts[i].product_id;
-
-
+      
+      
       cart.appendChild(img);
       cart.appendChild(h2);
       cart.appendChild(h3);
       cart.appendChild(button);
       cart.appendChild(input);
-
-
+      
+      
       Kitchen.appendChild(cart);
+      kit.push(allproducts[i]);
     }
   }
 }

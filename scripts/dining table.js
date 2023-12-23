@@ -1,12 +1,18 @@
 var allproducts;
 var addToCartButtons = document.getElementsByClassName("add-to-cart-button");
+var diningtable = document.getElementById("diningtable");
+
+let dini = [];
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "../JSON/products.json");
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     allproducts = JSON.parse(xhr.responseText);
     draw_products(allproducts);
-    // console.log(allproducts);
+
+    initFilter(dini,diningtable);
+    
     for (let i = 0; i < addToCartButtons.length; i++) {
       var button = addToCartButtons[i];
       button.addEventListener("click", addToCartClicked);
@@ -16,7 +22,6 @@ xhr.onreadystatechange = function () {
 xhr.send();
 //////////draw function
 
-var diningtable = document.getElementById("diningtable");
 
 function draw_products(allproducts) {
   for (var i = 0; i < allproducts.length; i++) {
@@ -53,6 +58,7 @@ function draw_products(allproducts) {
 
 
       diningtable.appendChild(cart);
+      dini.push(allproducts[i]);
     }
   }
 }
