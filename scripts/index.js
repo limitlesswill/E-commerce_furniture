@@ -12,7 +12,6 @@ btn.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-
 // notification functionality
 window.onload = () => {
   notifyNow();
@@ -24,9 +23,7 @@ function notifyNow() {
   if (readyNotif()) {
     notify.style.display = "";
     notify.innerHTML = countNotif();
-  }
-  else
-    notify.style.display = "none";
+  } else notify.style.display = "none";
 }
 
 function countNotif() {
@@ -40,9 +37,6 @@ function readyNotif() {
   return x != null;
 }
 
-
-
-
 // ////////////////////////////////// Login and Register //////////////////////////////////
 function signup() {
   var account = JSON.parse(localStorage.getItem("account"));
@@ -55,7 +49,9 @@ function signup() {
   var email = document.getElementById("email-register").value;
   console.log(email);
   var password = document.getElementById("password-register").value;
-  var confirmpassword = document.getElementById("confirmpassword-register").value;
+  var confirmpassword = document.getElementById(
+    "confirmpassword-register"
+  ).value;
 
   var error_arr = [];
 
@@ -96,56 +92,58 @@ function signup() {
     confirmpassword_notvalid = true;
   }
 
-  if (username_notvalid || email_notvalid || password_notvalid || confirmpassword_notvalid || email_foundnotvalid) {
+  if (
+    username_notvalid ||
+    email_notvalid ||
+    password_notvalid ||
+    confirmpassword_notvalid ||
+    email_foundnotvalid
+  ) {
     var message = "";
     for (var i = 0; i < error_arr.length; i++) {
       message += error_arr[i] + "\n";
     }
     alert(message);
-  }
-
-  else {
+  } else {
     var user = {
-      "username": username,
-      "email": email,
-      "password": password
-    }
+      username: username,
+      email: email,
+      password: password,
+    };
     account.push(user);
     localStorage.setItem("account", JSON.stringify(account));
-    alert("done")
-    togglePopup('registerOverlay', 'loginOverlay')
+    alert("done");
+    togglePopup("registerOverlay", "loginOverlay");
   }
 }
-
 
 function login() {
   var account = JSON.parse(localStorage.getItem("account"));
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   if (account == null) {
-    alert("There is no any account")
-    togglePopup('loginOverlay', 'registerOverlay')
-  }
-  else {
+    alert("There is no any account");
+    togglePopup("loginOverlay", "registerOverlay");
+  } else {
     for (var i = 0; i < account.length; i++) {
-
-      if ((account[i].email != email) && (account[i].password != password)) {
+      if (account[i].email != email && account[i].password != password) {
         alert("inValid Account");
-        togglePopup('loginOverlay', 'registerOverlay');
-      }
-
-      else if ((account[i].email == email) && (account[i].password != password)) {
+        togglePopup("loginOverlay", "registerOverlay");
+      } else if (account[i].email == email && account[i].password != password) {
         alert("Password Not Correct, please try again");
-      }
-
-      else if ((account[i].email == email) && (account[i].password == password)) {
+      } else if (account[i].email == email && account[i].password == password) {
         var user = {
-          "email": account[i].email,
-          "password": account[i].password
-        }
+          email: account[i].email,
+          password: account[i].password,
+        };
         sessionStorage.setItem("account", JSON.stringify(user));
-        closePopup('loginOverlay');
+        var userName = document.getElementById("userName");
+        var getuserName = JSON.parse(sessionStorage.getItem("account"));
+        if (getuserName != null) {
+          userName.innerHTML = getuserName.email;
+        }
 
+        closePopup("loginOverlay");
         // location.assign("./project1.html");
       }
     }
@@ -153,11 +151,11 @@ function login() {
 }
 
 function openPopup(id) {
-  document.getElementById(id).style.display = 'flex';
+  document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
-  document.getElementById(id).style.display = 'none';
+  document.getElementById(id).style.display = "none";
 }
 
 function togglePopup(closeId, openId) {
@@ -167,21 +165,13 @@ function togglePopup(closeId, openId) {
 
 function logOutBtn() {
   sessionStorage.removeItem("account");
-  sessionStorage.removeItem("prod_id_InSessionStorage")
-}
-//////////////// user name in log in
-var getuserName=JSON.parse(sessionStorage.getItem("account"));
+  sessionStorage.removeItem("prod_id_InSessionStorage");
 
-var userName=document.getElementById("userName");
+  var userName = document.getElementById("userName");
 
-if(getuserName==null){
-  
-  userName.innerHTML="Log in";
-  
+  var getuserName = JSON.parse(sessionStorage.getItem("account"));
+  if (getuserName == null) {
+    userName.innerHTML = "Log in";
+  }
 }
-else{
-  
-  userName.innerHTML=getuserName.email;
-}
-
 
