@@ -1,6 +1,6 @@
-var gettAllid=JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
-var totalSalary=document.getElementById("total");
-var addToCartClickedSalary=[];
+var gettAllid = JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
+var totalSalary = document.getElementById("total");
+var addToCartClickedSalary = [];
 
 var allCart = document.getElementById("allCart");
 var carts;
@@ -11,115 +11,106 @@ xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     carts = JSON.parse(xhr.responseText);
 
-    for(var j=0;j<gettAllid.length; j++){
-       for (var i = 0; i < carts.length; i++) {
-    
-    
-         if (carts[i].product_id==gettAllid[j]){
-      
-      
-     
+    for (var j = 0; j < gettAllid.length; j++) {
+      for (var i = 0; i < carts.length; i++) {
+        if (carts[i].product_id == gettAllid[j]) {
           var cart = document.createElement("div");
           var img = document.createElement("img");
-         var h2 = document.createElement("h2");
-           var h3 = document.createElement("h3");
-           var input=document.createElement("input");
-      var button_danger = document.createElement("button");
-      
-      
+          var h2 = document.createElement("h2");
+          var h3 = document.createElement("h3");
+          var input = document.createElement("input");
+          var button_danger = document.createElement("button");
 
-      img.classList.add("product-image");
-      img.setAttribute("alt", "Product Image");
-      h2.classList.add("product-name");
-      h3.classList.add("product-cost");
-      input.classList.add("product-quantity");
-      input.setAttribute("type","number");
-      button_danger.classList.add("add-to-cart-button-danger");
-      button_danger.setAttribute("value","");
-      cart.classList.add("cart");
-      
+          img.classList.add("product-image");
+          img.setAttribute("alt", "Product Image");
+          h2.classList.add("product-name");
+          h3.classList.add("product-cost");
+          input.classList.add("product-quantity");
+          input.setAttribute("type", "number");
+          button_danger.classList.add("add-to-cart-button-danger");
+          button_danger.setAttribute("value", "");
+          cart.classList.add("cart");
 
-      img.src = carts[i].photo;
-      h2.textContent = carts[i].product_name;
-      h3.textContent = carts[i].product_cost +"$";
-      button_danger.textContent = "Remove";
-      input.value=1;
-      button_danger.value=carts[i].product_id;
-      addToCartClickedSalary.push(parseInt(carts[i].product_cost));
+          img.src = carts[i].photo;
+          h2.textContent = carts[i].product_name;
+          h3.textContent = carts[i].product_cost + "$";
+          button_danger.textContent = "Remove";
+          input.value = 1;
+          button_danger.value = carts[i].product_id;
+          addToCartClickedSalary.push(parseInt(carts[i].product_cost));
 
-      cart.appendChild(img);
-      cart.appendChild(h2);
-      cart.appendChild(h3);
-      cart.appendChild(button_danger);
-      cart.appendChild(input);
-      allCart.appendChild(cart);     
-    }   
-  }
-}
+          cart.appendChild(img);
+          cart.appendChild(h2);
+          cart.appendChild(h3);
+          cart.appendChild(button_danger);
+          cart.appendChild(input);
+          allCart.appendChild(cart);
+        }
+      }
+    }
   }
   ///// for cost
-  var d=0;
-  for(x of addToCartClickedSalary){
-    d+=x;
-    
+  var d = 0;
+  for (x of addToCartClickedSalary) {
+    d += x;
   }
-  totalSalary.innerHTML="Total salary equal " + d +"$";
+  totalSalary.innerHTML = "Total salary equal " + d + "$";
   //////////////////// remove buttons
-  var removeCartButton = document.getElementsByClassName("add-to-cart-button-danger");
+  var removeCartButton = document.getElementsByClassName(
+    "add-to-cart-button-danger"
+  );
   for (let i = 0; i < removeCartButton.length; i++) {
     var _button = removeCartButton[i];
-    _button.addEventListener("click",removeFromCartButton);
+    _button.addEventListener("click", removeFromCartButton);
   }
-  var quantityInputs =document.getElementsByClassName("product-quantity");
-  for (let i = 0; i < quantityInputs.length;i++){
+  var quantityInputs = document.getElementsByClassName("product-quantity");
+  for (let i = 0; i < quantityInputs.length; i++) {
     var _input = quantityInputs[i];
-    _input.addEventListener("change",quantityChanged);
+    _input.addEventListener("change", quantityChanged);
   }
 
   function removeFromCartButton(event) {
-   var _button=event.target;
-   var arr=[]
-   arr = JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
-   var _indexofvalue=_button.value;
-   var _index=arr.indexOf(_indexofvalue);
-   arr.splice(_index,1);
-   sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(arr));
-   _button.parentElement.remove();
-   updateCartTotal();
+    var _button = event.target;
+    var arr = [];
+    arr = JSON.parse(sessionStorage.getItem("prod_id_InSessionStorage"));
+    var _indexofvalue = _button.value;
+    var _index = arr.indexOf(_indexofvalue);
+    arr.splice(_index, 1);
+    sessionStorage.setItem("prod_id_InSessionStorage", JSON.stringify(arr));
+    _button.parentElement.remove();
+    updateCartTotal();
+    notifyNow();
   }
-  ///////////////////////  quantity input 
-  function quantityChanged(event){
-    _input=event.target;
-    if (isNaN(_input.value) || _input.value<0 || _input.value =="") {
-      _input.value=1;
+  ///////////////////////  quantity input
+  function quantityChanged(event) {
+    _input = event.target;
+    if (isNaN(_input.value) || _input.value < 0 || _input.value == "") {
+      _input.value = 1;
     }
     updateCartTotal();
-
   }
   ////////////////////// update total of the cart
-  function updateCartTotal(){
-     var cartProductRows=document.getElementsByClassName("cart");
-     var total=0;
-     for(let i = 0;i < cartProductRows.length; i++){
-      var _cartProductRows=cartProductRows[i];
-      var priceElement=_cartProductRows.getElementsByClassName("product-cost")[0];
-      var quantityElement=_cartProductRows.getElementsByClassName("product-quantity")[0];
-      var price= parseInt(priceElement.innerText.replace("$",""));
-      var quantity=parseInt(quantityElement.value);
-      total = total + (price*quantity);
-     }
-     
-     totalSalary.innerHTML="Total salary equal " + total +"$";
+  function updateCartTotal() {
+    var cartProductRows = document.getElementsByClassName("cart");
+    var total = 0;
+    for (let i = 0; i < cartProductRows.length; i++) {
+      var _cartProductRows = cartProductRows[i];
+      var priceElement =
+        _cartProductRows.getElementsByClassName("product-cost")[0];
+      var quantityElement =
+        _cartProductRows.getElementsByClassName("product-quantity")[0];
+      var price = parseInt(priceElement.innerText.replace("$", ""));
+      var quantity = parseInt(quantityElement.value);
+      total = total + price * quantity;
     }
-  
-   
-  
-}
+
+    totalSalary.innerHTML = "Total salary equal " + total + "$";
+  }
+};
 
 xhr.send();
 
-
-/ ////////////////////////////////// Login and Register //////////////////////////////////
+/ /; ///////////////////////////////// Login and Register //////////////////////////////////
 function signup() {
   var account = JSON.parse(localStorage.getItem("account"));
   if (account == null) {
@@ -131,7 +122,9 @@ function signup() {
   var email = document.getElementById("email-register").value;
   console.log(email);
   var password = document.getElementById("password-register").value;
-  var confirmpassword = document.getElementById("confirmpassword-register").value;
+  var confirmpassword = document.getElementById(
+    "confirmpassword-register"
+  ).value;
 
   var error_arr = [];
 
@@ -172,27 +165,30 @@ function signup() {
     confirmpassword_notvalid = true;
   }
 
-  if (username_notvalid || email_notvalid || password_notvalid || confirmpassword_notvalid || email_foundnotvalid) {
+  if (
+    username_notvalid ||
+    email_notvalid ||
+    password_notvalid ||
+    confirmpassword_notvalid ||
+    email_foundnotvalid
+  ) {
     var message = "";
     for (var i = 0; i < error_arr.length; i++) {
       message += error_arr[i] + "\n";
     }
     alert(message);
-  }
-
-  else {
+  } else {
     var user = {
-      "username": username,
-      "email": email,
-      "password": password
-    }
+      username: username,
+      email: email,
+      password: password,
+    };
     account.push(user);
     localStorage.setItem("account", JSON.stringify(account));
-    alert("done")
-    togglePopup('registerOverlay', 'loginOverlay')
+    alert("done");
+    togglePopup("registerOverlay", "loginOverlay");
   }
 }
-
 
 function login() {
   var account = JSON.parse(localStorage.getItem("account"));
@@ -228,11 +224,11 @@ function login() {
 }
 
 function openPopup(id) {
-  document.getElementById(id).style.display = 'flex';
+  document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
-  document.getElementById(id).style.display = 'none';
+  document.getElementById(id).style.display = "none";
 }
 
 function togglePopup(closeId, openId) {
