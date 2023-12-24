@@ -199,29 +199,28 @@ function login() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
   if (account == null) {
-    alert("There is no any account")
-    togglePopup('loginOverlay', 'registerOverlay')
-  }
-  else {
+    alert("There is no any account");
+    togglePopup("loginOverlay", "registerOverlay");
+  } else {
     for (var i = 0; i < account.length; i++) {
-
-      if ((account[i].email != email) && (account[i].password != password)) {
+      if (account[i].email != email && account[i].password != password) {
         alert("inValid Account");
-        togglePopup('loginOverlay', 'registerOverlay');
-      }
-
-      else if ((account[i].email == email) && (account[i].password != password)) {
+        togglePopup("loginOverlay", "registerOverlay");
+      } else if (account[i].email == email && account[i].password != password) {
         alert("Password Not Correct, please try again");
-      }
-
-      else if ((account[i].email == email) && (account[i].password == password)) {
+      } else if (account[i].email == email && account[i].password == password) {
         var user = {
-          "email": account[i].email,
-          "password": account[i].password
-        }
+          email: account[i].email,
+          password: account[i].password,
+        };
         sessionStorage.setItem("account", JSON.stringify(user));
-        closePopup('loginOverlay');
+        var userName = document.getElementById("userName");
+        var getuserName = JSON.parse(sessionStorage.getItem("account"));
+        if (getuserName != null) {
+          userName.innerHTML = getuserName.email;
+        }
 
+        closePopup("loginOverlay");
         // location.assign("./project1.html");
       }
     }
@@ -243,23 +242,12 @@ function togglePopup(closeId, openId) {
 
 function logOutBtn() {
   sessionStorage.removeItem("account");
-  sessionStorage.removeItem("prod_id_InSessionStorage")
+  sessionStorage.removeItem("prod_id_InSessionStorage");
+
+  var userName = document.getElementById("userName");
+
+  var getuserName = JSON.parse(sessionStorage.getItem("account"));
+  if (getuserName == null) {
+    userName.innerHTML = "Log in";
+  }
 }
-
-
-//////////////// user name in log in
-// var getuserName=JSON.parse(sessionStorage.getItem("account"));
-
-// var userName=document.getElementById("userName");
-
-// if(getuserName==null){
-  
-//   userName.innerHTML="Log in";
-  
-// }
-// else{
-  
-//   userName.innerHTML=getuserName.email;
-// }
-
-
