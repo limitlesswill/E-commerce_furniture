@@ -130,7 +130,7 @@ function writeVal(arr) {
 
     // const indicator = document.querySelector(".filter_container>.filter_show>.filter_content>.indic");
 
-    const output = document.querySelector(".filter_container>.filter_show>.filter_content>.indic>#val");
+    const output = document.querySelector(".filter_container>.filter_show>.filter_content>.indic");
 
     range.addEventListener("input", () => {
         const val = range.value;

@@ -556,10 +556,6 @@ footer svg {
   user-select: none;
 }
 
-.filter_container>.filter_show>.filter_content * {
-  border: 1px solid red;
-}
-
 .filter_container>.filter_show>.filter_content>.filter_group:nth-child(2) {
   display: flex;
   flex-flow: row wrap;
