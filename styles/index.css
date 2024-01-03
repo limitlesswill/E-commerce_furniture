@@ -836,6 +836,23 @@ start view in screens less than 600px
 
   /* end second header */
 
+  /* start filter */
+  .filter_container>.filter_show>.filter_content>.filter_group:nth-child(2){
+    display:flex;
+    flex-flow:column wrap;
+  }
+  .filter_container>.filter_show>.filter_content{
+    display:flex;
+    flex-flow:column nowrap;
+  }
+  .filter_container>.filter_show>.filter_content * {
+    font-size: 2vw;
+    width:5vw;
+    border:2px solid red;
+  }
+  
+  /* end filter */
+
   /* start third container */
   .f_container {
     display: flex;
@@ -1040,8 +1057,8 @@ start view in screens less than 600px
 
   /* end footer */
 }
-
 /* end view in screens less than 600px */
+
 .overlay h2 {
   color: white;
 }
