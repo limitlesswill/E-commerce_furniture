@@ -8,8 +8,12 @@ window.document.body.onscroll = () => {
 };
 
 btn.addEventListener("click", () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+  // document.body.scrollTop = 0;
+  // document.documentElement.scrollTop = 0;
 });
 
 // notification functionality
